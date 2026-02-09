@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "strongaya-instruments"
+version = "0.1.0"
+description = "A small library with various measurement instrument scoring tools developed for the STRONG AYA Project."
+authors = [
+    { name = "Joshi Hogenboom (@Jhogenboom)", email = "joshi.hogenboom@maastrichtuniversity.nl" }
+]
+maintainers = [
+    { name = "Joshi Hogenboom (@Jhogenboom)", email = "joshi.hogenboom@maastrichtuniversity.nl" }
+]
+
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "pandas>=2.2.3"
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+]
+dev = [
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+    "mypy>=0.950",
+    "bandit>=1.7.0",
+    "safety>=2.0.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/STRONGAYA/measurement-instruments-tools"
+"Bug Tracker" = "https://github.com/STRONGAYA/measurement-instruments-tools/issues"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+package-data = { "strongaya_instruments" = ["assets/**/*.json"] }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
